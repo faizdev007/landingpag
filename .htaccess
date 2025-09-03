@@ -1,0 +1,22 @@
+# Ensure PHP files are executed, not downloaded
+AddType application/x-httpd-php .php
+
+# Prevent directory listing
+Options -Indexes
+
+# Block direct access to sendmail.php
+<Files "sendmail.php">
+    <If "%{REQUEST_METHOD} != 'POST'">
+        Require all denied
+    </If>
+</Files>
+
+# Deny access to sensitive files
+<FilesMatch "(config\.php|composer\.json|composer\.lock|\.env)">
+    Require all denied
+</FilesMatch>
+
+# Block access to hidden files (like .env, .git)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

@@ -13,20 +13,32 @@
       font-family: Arial, sans-serif;
     }
     .hero {
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      background: url('/public/background.webp') no-repeat center center/cover;
       /* color: white; */
       padding: 80px 20px;
       position: relative;
     }
-    .hero .overlay {
+    /* .hero .overlay {
       background: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-    }
+      z-index: -2;
+    } */
     .hero-content {
-      position: relative;
-      z-index: 2;
+      /* position: relative; */
+      /* z-index: 2; */
     }
+    .heading{
+      font-size: xx-large;
+    }
+
+    /* For small devices (mobile screens below 576px) */
+    @media (max-width: 576px) {
+      .heading {
+        font-size: larger; /* or 20px */
+      }
+    }
+
     .form-box {
       background: white;
       padding: 30px;
@@ -53,20 +65,29 @@
 <!-- HERO SECTION -->
 <section class="hero text-center text-lg-start">
   <div class="overlay"></div>
-  <div class="container hero-content">
-    <div class="row align-items-center">
+  <div class="container-fluid hero-content">
+    <div class="text-center font-bold mb-4">
+      <div class="w-100 d-flex justify-content-center">
+        <img src="/public/logo.webp" class="d-block" alt="logo"/>
+      </div>
+      <p class="lead position-relative d-inline-block text-white p-2">
+        <span class="bg-black z-1 position-absolute top-0 bottom-0 start-0 end-0 w-full rounded opacity-25"></span>
+        <span class="position-relative z-2">We’re not just here to set your business up, but to support you as it grows.</span>
+      </p>
+    </div>
+    <div class="row">
       <!-- Left Content -->
       <div class="col-lg-6 text-white mb-4 mb-lg-0">
-        <h1 class="fw-bold">APPROACH - ULTIMATE LANDING PAGE</h1>
-        <p class="lead">We’re not just here to set your business up, but to support you as it grows.</p>
+        <h2 class="fw-bold border text-center p-2 border-white">Reliable, Fast and Low Cost</h2>
         <ul class="list-unstyled">
-          <li><i class="fa fa-check text-success"></i> Lorem ipsum dolor sit amet</li>
-          <li><i class="fa fa-check text-success"></i> Aenean laoreet metus ligula malesuada</li>
-          <li><i class="fa fa-check text-success"></i> Vulputate lacus sollicitudin</li>
+          <li class="p-2 text-bold"><i class="fa fa-check text-success"></i> Lorem ipsum dolor sit amet</li>
+          <li class="p-2 text-bold"><i class="fa fa-check text-success"></i> Aenean laoreet metus ligula malesuada</li>
+          <li class="p-2 text-bold"><i class="fa fa-check text-success"></i> Vulputate lacus sollicitudin</li>
         </ul>
+        <img src="/public/hero.webp" alt="Hero Image" class="img-fluid d-lg-block d-none position-absolute bottom-0 start-0 mt-3">
       </div>
       <!-- Right Form -->
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="targetform">
         <div class="form-box shadow">
           <h4 class="text-center text-danger">INTERESTED IN OUR PRODUCT?</h4>
           <form id="contactForm" action="/sendmail.php" method="POST" novalidate>
@@ -110,22 +131,73 @@
 
 <!-- STORY SECTION -->
 <section class="container py-5">
-  <h2 class="text-center mb-4">THE STORY BEHIND OUR PRODUCT</h2>
-  <div class="row text-center">
-    <div class="col-md-4 mb-4">
-      <h4 class="text-warning">UNSPOILED NATURE</h4>
-      <p>Our products are made from natural fruits without preservatives.</p>
+  <p class="text-center mb-5">
+    <span class="border heading font-bold border-black p-1">THE STORY BEHIND OUR PRODUCT</span>
+  </p>
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h5 class="fw-bold text-success h3">Pure Origins</h5>
+      <img src="/public/bottel.webp" alt="Cocohouse Bottle" class="img-fluid d-lg-none d-block  mb-3 shadow border border-black rounded">
+      <p>Our coconut water begins its journey in lush tropical groves, where tall coconut trees sway with the ocean breeze. Each coconut is carefully harvested at just the right stage of maturity to ensure maximum freshness and natural sweetness.</p>
+      <p>We avoid unnecessary processing to preserve the original taste and hydrating power of coconut water. Every sip you take connects you directly to the untouched beauty of nature, pure and simple.</p>
+      <p>It’s not just a drink — it’s a refreshing reminder that the best things in life are natural, nourishing, and unspoiled by artificial additives.</p>
     </div>
-    <div class="col-md-4 mb-4">
-      <h4 class="text-warning">VARIETY OF FRUITS</h4>
-      <p>Enjoy a mix of flavors from apples, oranges, strawberries and more.</p>
+    <div class="col-md-4">
+      <img src="/public/bottel.webp" alt="Cocohouse Bottle" class="img-fluid mb-3 d-lg-block d-none shadow border border-black rounded">
     </div>
-    <div class="col-md-4 mb-4">
-      <h4 class="text-warning">MADE WITH LOVE</h4>
-      <p>Every bottle is crafted carefully to ensure freshness and quality.</p>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="/public/realcoconut.webp" alt="Fresh Coconut" class="img-fluid mb-3 d-lg-block d-none shadow border border-black rounded">
+    </div>
+    <div class="col-md-8">
+      <h5 class="fw-bold text-success h3">Nature’s Blend</h5>
+      <img src="/public/realcoconut.webp" alt="Fresh Coconut" class="img-fluid d-lg-none d-block mb-3 shadow border border-black rounded">
+      <p>While coconut water is naturally hydrating, we also celebrate the variety of tropical fruits that complement its taste. By blending coconut water with pineapple, mango, or watermelon, we create exciting flavors that enhance your refreshment experience.</p>
+      <p>These fruit-infused blends are carefully crafted to retain the coconut’s natural benefits while offering a delicious twist. Every bottle is a burst of tropical delight, perfect for quenching thirst on sunny days or energizing after a workout.</p>
+      <p>We believe that when nature’s gifts come together, the result is a drink that’s both nourishing for the body and uplifting for the soul.</p>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h5 class="fw-bold text-success h3">Our Mission</h5>
+      <img src="/public/watercup.webp" alt="Refreshing Coconut Water" class="img-fluid mb-3 d-lg-none d-block shadow border border-black rounded">
+      <p>At Cocohouse, our mission is to bring you closer to nature through hydration. We strive to provide products that are not only healthy but also responsibly sourced, ensuring that both people and the planet benefit from what we create.</p>
+      <p>We work with local farmers who share our values, supporting communities while promoting sustainable farming practices. This ensures that every bottle of coconut water carries a story of care, respect, and responsibility.</p>
+      <p>Our goal is simple: to inspire a healthier lifestyle through drinks that are pure, refreshing, and crafted with love for nature.</p>
+    </div>
+    <div class="col-md-4">
+      <img src="/public/watercup.webp" alt="Refreshing Coconut Water" class="img-fluid mb-3 d-lg-block d-none shadow border border-black rounded">
     </div>
   </div>
 </section>
+
+<section class="container py-5">
+  <div class="border border-black p-lg-5 p-3 text-center ">
+    <p class="heading">"We manufacture our products with the utmost care and dedication, we check carefully the process from the raw materials to your home."</p>
+    <div class="mb-4">
+      <span class="text-success">Mark Wright </span>- Founder & CEO
+    </div>
+    <img src="/public/testimonial.jpg" alt="person"/>
+  </div>
+</section>
+
+<section class="hero p-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <div class="text-lg-start text-center">
+          <p class="heading text-white">Get a free sample today and join the growing community of "Approach" lovers</p>
+          <a href="#targetform" class="btn btn-success border border-black shadow heading">Request Free Sample</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="/public/cocobottel.webp" alt="cocobottel" class="w-75"/>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer>
